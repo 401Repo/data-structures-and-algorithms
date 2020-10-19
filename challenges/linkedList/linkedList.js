@@ -53,43 +53,44 @@ class LinkedList{
             while (current != null) { 
                 // compare each element of the list 
                 // with given element 
-                if (current.element === data) 
-                    return count; 
-                count++; 
+                if (data === current.data){ 
+                    isInList = true; 
+                    return isInList; 
+                }
+
                 current = current.next; 
             } 
           
             // not found
-            if(count > 0){
-                isInList = true;
-            } else {
-                isInList = false;
-            }
+
+
+            
             return isInList; 
         } 
     }
 
     toString(){
+
+        let output = '{ ';
+        let words = '';
+        let middle = ' } -> {';
+        let end = ' NULL'
+
         let current = this.head;
 
         while(current){
-            console.log(current.data);
-            current = current.next;
-        }
+
+            if(current !== null){
+                words += `{ ${current.data} } -> `;
+                current = current.next;
+           }
+         }
+         words += end;
+         return words;
     }
 }
 
-let ll = new LinkedList();
-
-ll.insert(200);
-
-
-console.log(ll);
-
-console.log(ll.includes(200));
-
-// module.exports = LinkedListNode;
+module.exports = LinkedList;
 
 // tutorial at https://www.youtube.com/watch?v=ZBdE8DElQQU
 
-ll.toString();
