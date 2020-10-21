@@ -3,7 +3,9 @@
 // User defined class node 
 class Node { 
     // constructor 
-    constructor(data, next = null) 
+    constructor(data)
+    
+    // need to ALWAYS use 'data'
     { 
         this.data = data; 
         this.next = null
@@ -80,17 +82,124 @@ class LinkedList{
 
         while(current){
 
-            if(current !== null){
+
                 words += `{ ${current.data} } -> `;
                 current = current.next;
-           }
+
          }
          words += end;
          return words;
     }
+
+
+
+    //Art by Hayley Jane Wakenshaw: lab 6 functions bellow ruber ducks *QUACK*
+  //_      _      _
+  //>(.)__ <(.)__ =(.)__
+  //(___/  (___/  (___/  hjw
+
+  append(data){
+
+//lets make a new node
+    let node = new Node(data);
+
+    // lets define the current node
+    let current;
+
+    if(this.head == null){
+        this.head = node;
+    } else{
+        current = this.head;
+
+        while( current.next){
+            current = current.next;
+        }
+        current.next = node;
+    }
+    this.size++;
+  }
+
+
+  insertBefore(data, newNum) {
+
+    var node = new Node(newNum);
+    
+    let current = this.head;
+    
+    let previous = null;
+    
+    while(current) {
+    
+        if(current.data === data) {
+    
+            if(previous === null) {
+    
+                this.head = node;
+    
+            } else {
+    
+                previous.next = node;
+    }
+    
+    node.next = current;
+   
+    break;
+   
+}
+previous = current;
+
+current = current.next;
+
+}
+
+this.size++;
+
+}
+
+
+    insertAfter(data, newNum){
+
+        // lets make a node
+        let node = new Node(newNum);
+        let current = this.head;
+
+        while(current){
+            if(current.data === data){
+                node.next = current.next;
+                current.next = node;
+                break;
+            }
+            if(current.next===null){
+                current.next = node;
+            }
+            current = current.next;
+        }
+
+        this.size++;
+
+
+
+    }
+
 }
 
 module.exports = LinkedList;
 
 // tutorial at https://www.youtube.com/watch?v=ZBdE8DElQQU
+
+// const l = new LinkedList();
+
+// l.insert(1);
+// l.insert(2);
+// l.insert(3);
+// l.insert(4);
+// l.insert(5);
+
+// l.insertBefore(1,1);
+
+// console.log(l.toString());
+
+// l.inseftAfter(2,2);
+
+// console.log(l.toString());
 
