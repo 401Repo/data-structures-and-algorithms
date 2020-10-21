@@ -23,6 +23,12 @@ I had to make this CC make it so you can add, see if there's a true or flase res
 
 - kept the printing just like asked to { a } -> { b }... and used the string to test new methods.
 
+## Code Challenge 07 Update
+
+- i need to find node before "k" and or handle events if its not in list or a value entered is a negative number.
+
+- kept the printing just like asked to { a } -> { b }... and used the string to test new methods.
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
