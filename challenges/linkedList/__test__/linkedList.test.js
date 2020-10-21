@@ -168,7 +168,90 @@ it('Returns false is value exist doest', () => {
           
           // ti chain them i use the keaywork "next"
           });
+    //Art by Hayley Jane Wakenshaw: lab 7 function  test bellow ruber ducks *QUACK*
+  //_      _      _
+  //>(.)__ <(.)__ =(.)__
+  //(___/  (___/  (___/  hjw
 
+  it('K is greater, out scope', () => {
+    // create our test structure linked list
+    let l = new LinkedList();
+    
+    //lets add a node
+    l.append(1);
+    l.append(2);
+    l.append(3);
+    l.append(4);
+    l.append(5);
+  
+    // comparing result to expected test result
+    expect(l.kFromEnd(10)).toEqual("Error in the list: sorry!");
+    
+    // ti chain them i use the keaywork "next"
+    });
+
+    it('K is same as length, but out scope (as we start from 0)', () => {
+      // create our test structure linked list
+      let l = new LinkedList();
+      
+      //lets add a node
+      l.append(1);
+      l.append(2);
+      l.append(3);
+      l.append(4);
+      l.append(5);
+    
+      // comparing result to expected test result
+      expect(l.kFromEnd(5)).toEqual("Error in the list: sorry!");
+      
+      // ti chain them i use the keaywork "next"
+      });
+
+      it('K is negative, but out scope (as we start at least from 0)', () => {
+        // create our test structure linked list
+        let l = new LinkedList();
+        
+        //lets add a node
+        l.append(1);
+        l.append(2);
+        l.append(3);
+        l.append(4);
+        l.append(5);
+      
+        // comparing result to expected test result
+        expect(l.kFromEnd(-4)).toEqual('Use positive interger please!');
+        
+        // ti chain them i use the keaywork "next"
+        });
+
+        it('K is in a 1 object linked list', () => {
+          // create our test structure linked list
+          let l = new LinkedList();
+          
+          //lets add a node
+          l.append(1);
+        
+          // comparing result to expected test result
+          expect(l.kFromEnd(0)).toEqual(1);
+          
+          // ti chain them i use the keaywork "next"
+          });
+
+          it('K is in a happy path: in the middle or atleast not end or begining', () => {
+            // create our test structure linked list
+            let l = new LinkedList();
+            
+            //lets add a node
+            l.append(1);
+            l.append(2);
+            l.append(3);
+          
+            // comparing result to expected test result
+            expect(l.kFromEnd(1)).toEqual(2);
+            
+            // ti chain them i use the keaywork "next"
+            });
+  
 
 });
 
