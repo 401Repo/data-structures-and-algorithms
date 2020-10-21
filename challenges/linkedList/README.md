@@ -14,6 +14,15 @@ I had to make this CC make it so you can add, see if there's a true or flase res
 - Define a method called toString (or st in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL"
 
+
+## Code Challenge 06 Update
+
+- Added and tested that i can just add a new node to the end of a list.
+- made sure i can insert before a given value in an array list
+- made sure i can add after
+
+- kept the printing just like asked to { a } -> { b }... and used the string to test new methods.
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
