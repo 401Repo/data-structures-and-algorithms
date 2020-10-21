@@ -93,7 +93,7 @@ class LinkedList{
 
 
 
-    //Art by Hayley Jane Wakenshaw: lab 6 functions bellow ruber ducks *QUACK*
+    //Art by Hayley Jane Wakenshaw: code challenge 6 functions bellow ruber ducks *QUACK*
   //_      _      _
   //>(.)__ <(.)__ =(.)__
   //(___/  (___/  (___/  hjw
@@ -181,13 +181,64 @@ this.size++;
 
     }
 
+
+
+   ///// from the end data
+
+       //Art by Hayley Jane Wakenshaw: Code 7 function bellow ruber ducks *QUACK*
+  //_      _      _
+  //>(.)__ <(.)__ =(.)__
+  //(___/  (___/  (___/  hjw
+
+   kFromEnd(data) {
+    
+    let nodesInList = 0;
+
+    let current = this.head;
+
+    if(data < 0) {
+        return 'Use positive interger please!';
+    }
+
+
+    while(current) {
+
+        nodesInList++;
+
+        current = current.next;
+
+    }
+
+    let kFromHead = nodesInList - 1 - data;
+
+    if(kFromHead < 0 || kFromHead < 0) {
+
+        return 'Error in the list: sorry!';
+
+    }
+
+    current = this.head;
+
+    while(kFromHead > 0) {
+
+        kFromHead--;
+
+        current = current.next;
+
+    }
+
+
+    return current.data;
+   }
+
+
 }
 
 module.exports = LinkedList;
 
 // tutorial at https://www.youtube.com/watch?v=ZBdE8DElQQU
 
-// const l = new LinkedList();
+const l = new LinkedList();
 
 // l.insert(1);
 // l.insert(2);
@@ -195,11 +246,10 @@ module.exports = LinkedList;
 // l.insert(4);
 // l.insert(5);
 
-// l.insertBefore(1,1);
-
 // console.log(l.toString());
 
-// l.inseftAfter(2,2);
+// l.kFromEnd(1,2);
 
-// console.log(l.toString());
+// console.log(l.kFromEnd(0));
+
 
