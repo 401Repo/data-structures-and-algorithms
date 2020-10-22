@@ -1,4 +1,4 @@
-# Singly Linked List
+# Linked List
 <!-- Short summary or background information -->
 
 I had to make this CC make it so you can add, see if there's a true or flase response if there was a a certain index in the Array list, and print everything out in a certain pattern.
