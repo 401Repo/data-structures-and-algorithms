@@ -53,6 +53,10 @@ I had to make this CC make it so you can add, see if there's a true or flase res
 
 - kept the printing just like asked to { a } -> { b }... and used the string to test new methods.
 
+## Code Challenge 08 Update
+
+- Merger two list and create test case to ensure an alternating new list.
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
