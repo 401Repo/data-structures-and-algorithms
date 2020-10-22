@@ -231,6 +231,35 @@ this.size++;
     return current.data;
    }
 
+       //Art by Hayley Jane Wakenshaw: code challenge 8 functions bellow ruber ducks *QUACK*
+  //_      _      _
+  //>(.)__ <(.)__ =(.)__ // we need to zip two list together
+  //(___/  (___/  (___/  hjw
+
+
+    zipTwoLL(list2) {
+
+    let current = this.head;
+
+    let current2 = list2.head;
+
+    // instead of a new node i need a whole new LL to add all my nodes
+    let zipperList = new LinkedList();
+
+    while(current  || current2) {
+
+        if(current){
+        zipperList.append(current.data);
+        current = current.next;
+        }
+        if(current2){
+            zipperList.append(current2.data);
+            current2 = current2.next;
+            }
+    }
+
+    return zipperList.toString();
+   }
 
 }
 
@@ -238,15 +267,20 @@ module.exports = LinkedList;
 
 // tutorial at https://www.youtube.com/watch?v=ZBdE8DElQQU
 
-const l = new LinkedList();
+// const l = new LinkedList();
 
 // l.insert(1);
 // l.insert(2);
-// l.insert(3);
-// l.insert(4);
-// l.insert(5);
 
 // console.log(l.toString());
+
+// const l2 = new LinkedList();
+
+// l2.insert(50);
+// l2.insert(60);
+
+// console.log(l2.zipTwoLL(l));
+
 
 // l.kFromEnd(1,2);
 

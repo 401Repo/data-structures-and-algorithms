@@ -251,7 +251,25 @@ it('Returns false is value exist doest', () => {
             
             // ti chain them i use the keaywork "next"
             });
+  //Art by Hayley Jane Wakenshaw: lab 8 function  test bellow ruber ducks *QUACK*
+  //_      _      _
+  //>(.)__ <(.)__ =(.)__
+  //(___/  (___/  (___/  hjw
+
+  it('our zipped link method returns a list w nodes from first two linked list', () => {
+    // create our test structure linked list
+    let l = new LinkedList();
+    let l2 = new LinkedList();
+    
+    //lets add a node
+    l.append(1);
+    l.append(2);
+    l2.append(30);
+    l2.append(40);
   
+    // comparing result to expected test result
+    expect(l.zipTwoLL(l2)).toEqual("{ 1 } -> { 30 } -> { 2 } -> { 40 } ->  NULL");
+    });  
 
 });
 
