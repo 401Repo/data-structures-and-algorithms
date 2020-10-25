@@ -200,7 +200,6 @@ this.size++;
         return 'Use positive interger please!';
     }
 
-
     while(current) {
 
         nodesInList++;
@@ -231,7 +230,7 @@ this.size++;
     return current.data;
    }
 
-       //Art by Hayley Jane Wakenshaw: code challenge 8 functions bellow ruber ducks *QUACK*
+  //Art by Hayley Jane Wakenshaw: code challenge 8 functions bellow ruber ducks *QUACK*
   //_      _      _
   //>(.)__ <(.)__ =(.)__ // we need to zip two list together
   //(___/  (___/  (___/  hjw
@@ -261,16 +260,64 @@ this.size++;
     return zipperList.toString();
    }
 
+
+   reverse() {
+
+
+    // If List is empty return the List
+   if (this.head === null){
+    return this;
+   }
+   // swap head and tail
+   // And keep a reference
+   // For the tail because it will be our
+   // New head
+   let node = this.head;
+   this.tail = node;
+   // We need to variable to
+   // keep reference to previous and next Node
+   let prev, next;
+
+   // Loop through the list
+   // We could also use the run method
+   while (node) {
+     // we save the next value @example 2
+     next = node.next;
+
+     // set the next node the be the previous
+     // @example 2 will be the previous of 1
+     node.next = prev;
+
+     // Set previous to be the actual Node
+     // @example 1
+     // @example Now 2 as 1 as next 1 <- 2
+     prev = node;
+
+     // Move on to the loop
+     node = next;
+   }
+   // When the loop is finished
+   // Our prev is our reversed list
+   // So we just set it to be the head
+   // @example (tail)1 <- 2 <- 3 <- 4 <- 5(head)
+   this.head = prev;
+   return this;
+ }
+
+
 }
 
 module.exports = LinkedList;
 
 // tutorial at https://www.youtube.com/watch?v=ZBdE8DElQQU
 
-// const l = new LinkedList();
+const l = new LinkedList();
 
-// l.insert(1);
-// l.insert(2);
+l.insert(1);
+l.insert(2);
+l.insert(3);
+
+console.log(l.reverse());
 
 // console.log(l.toString());
 
