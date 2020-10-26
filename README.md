@@ -5,6 +5,8 @@
 
 ### [Code Challenge 1: Reverse array](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/reverse-array)
 
+### [Code Challenge 2: Array Shift](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/reverse-array)
+
 ### [Code Challenge 5: Linked List](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/linkedList)
 
 ### [Code Challenge 6: Append and add before and after a value in list](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/linkedList)
