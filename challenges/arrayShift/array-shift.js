@@ -23,8 +23,6 @@ arrayshifter = (array, value) => {
 
     }
 
-    console.log(newArr);
-
     return newArr;
 
 }

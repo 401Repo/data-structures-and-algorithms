@@ -1,4 +1,4 @@
-# Reverse and Array
+# Reverse an Array
 
 This is a challenege without using any helper methods to reverse an Array. 
 
