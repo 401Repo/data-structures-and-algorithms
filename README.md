@@ -14,3 +14,5 @@
 ### [Code Challenge 7: find value of node at k before end of list.](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/linkedList)
 
 ### [Code Challenge 8: Zip two linked list in to one](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/linkedList)
+
+### [Code Challenge 9: stacks and queues](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/linkedList)
