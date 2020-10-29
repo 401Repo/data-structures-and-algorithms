@@ -18,3 +18,5 @@
 ### [Code Challenge 9: stacks and queues](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/stacks-n-queues)
 
 ### [Code Challenge 11: queues with stacks](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/queues-w-stacks)
+
+### [Code Challenge 12: Cats N Dogs: animal shelter](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/animal-shelter)
