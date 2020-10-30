@@ -20,3 +20,8 @@
 ### [Code Challenge 11: queues with stacks](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/queues-w-stacks)
 
 ### [Code Challenge 12: Cats N Dogs: animal shelter](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/animal-shelter)
+
+### [Code Challenge 13: Validator](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/backetValidator)
+
+
+
