@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603934031536" clover="3.2.0">
-  <project timestamp="1603934031536" name="All files">
-    <metrics statements="201" coveredstatements="180" conditionals="64" coveredconditionals="47" methods="30" coveredmethods="29" elements="295" coveredelements="256" complexity="0" loc="201" ncloc="201" packages="6" files="8" classes="8"/>
+<coverage generated="1604031615955" clover="3.2.0">
+  <project timestamp="1604031615955" name="All files">
+    <metrics statements="216" coveredstatements="195" conditionals="75" coveredconditionals="58" methods="31" coveredmethods="30" elements="322" coveredelements="283" complexity="0" loc="216" ncloc="216" packages="7" files="9" classes="9"/>
     <package name="animal-shelter">
       <metrics statements="15" coveredstatements="13" conditionals="8" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <file name="animal-shelter.js" path="/Users/pupmega/codefellows/data-structures-and-algorithms/challenges/animal-shelter/animal-shelter.js">
@@ -41,6 +41,27 @@
         <line num="21" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="backetValidator">
+      <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
+      <file name="bracket-val.js" path="/Users/pupmega/codefellows/data-structures-and-algorithms/challenges/backetValidator/bracket-val.js">
+        <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="14" count="90" type="cond" truecount="5" falsecount="0"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="18" count="77" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="66" type="stmt"/>
+        <line num="23" count="11" type="stmt"/>
+        <line num="25" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="31" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
       </file>
     </package>
     <package name="linkedList">
