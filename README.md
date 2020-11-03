@@ -23,5 +23,9 @@
 
 ### [Code Challenge 13: Validator](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/backetValidator)
 
+### [Code Challenge 14: Trees](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/tree)
+
+
+
 
 
