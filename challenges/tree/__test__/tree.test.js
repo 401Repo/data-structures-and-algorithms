@@ -1,10 +1,10 @@
 'use strict';
 // eslint-disable-next-line no-unused-vars
-const {BinarySearchTree, BinaryTree, Node, intersectTrees} = require('../tree.js');
+const { BinarySearchTree, BinaryTree, Node, intersectTrees } = require('../tree.js');
 
 
 describe(`Testing the tree`, () => {
-      
+
   it('Can create a tree', () => {
     const newTree = new BinarySearchTree();
     expect(newTree.root).toBe(null);
@@ -43,7 +43,7 @@ describe(`Testing the tree`, () => {
     tree.add(7);
     tree.add(15);
     tree.add(12);
-    expect(tree.inOrder()).toEqual([ 2, 5, 7, 10, 12, 15 ]);
+    expect(tree.inOrder()).toEqual([2, 5, 7, 10, 12, 15]);
   });
 
   it('Can return a collection post order from the tree nodes', () => {
@@ -54,7 +54,21 @@ describe(`Testing the tree`, () => {
     tree.add(7);
     tree.add(15);
     tree.add(12);
-    expect(tree.postOrder()).toEqual([ 2, 7, 5, 12, 15, 10 ]);
+    expect(tree.postOrder()).toEqual([2, 7, 5, 12, 15, 10]);
+  });
+
+
+  it('Can find the max val in a binary tree', () => {
+    const tree = new BinarySearchTree(null);
+    tree.add(10);
+    tree.add(10);
+    tree.add(10);
+    tree.add(13);
+    tree.add(19);
+    tree.add(20);
+    tree.add(90);
+    tree.add(10);
+    expect(tree.getMaxVal()).toEqual(90);
   });
 
 });

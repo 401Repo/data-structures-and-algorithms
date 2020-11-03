@@ -12,6 +12,7 @@ I need classes for nodes, tree, and methods for the three
 -    ✓ Can return a preorder collection from tree (1 ms)
 -    ✓ Can return a colletion of node values in order from tree (1 ms)
 -    ✓ Can return a collection post order from the tree nodes
+-    ✓ Can find the max val in a binary tree
 
 ## guide:
 
