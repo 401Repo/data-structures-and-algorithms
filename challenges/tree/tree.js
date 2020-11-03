@@ -67,9 +67,34 @@ class BinaryTree {
     _walk(this.root);
     return results;
   }
+
+  getMaxVal() {
+    let results = [];
+    let _walk = (node) => {
+      results.push(node.value);
+      if(node.left) {
+        _walk(node.left);
+      }
+      if(node.right) {
+        _walk(node.right);
+      }
+    };
+    _walk(this.root);
+    let temp = 0;
+    for(let y = 0; y<results.length; y++){
+      if(results[y] > temp){
+        temp = results[y];
+      } 
+    }
+
+    return temp;
+
+  }
 }
 
-// Now the searh
+
+
+
 
 class BinarySearchTree extends BinaryTree {
 
@@ -126,3 +151,14 @@ class BinarySearchTree extends BinaryTree {
 
 
 module.exports = {BinarySearchTree, BinaryTree, Node};
+const tree = new BinarySearchTree(null);
+tree.add(10);
+tree.add(10);
+tree.add(10);
+tree.add(13);
+tree.add(19);
+tree.add(20);
+tree.add(90);
+tree.add(10);
+
+console.log(tree.getMaxVal())
