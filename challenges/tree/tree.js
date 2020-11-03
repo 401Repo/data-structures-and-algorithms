@@ -125,30 +125,4 @@ class BinarySearchTree extends BinaryTree {
 }
 
 
-
-// const root = new Node('+');
-// root.left = new Node('*');
-// root.left.left = new Node(3);
-// root.left.right = new Node('/');
-// root.left.right.right = new Node(4);
-// root.left.right.left = new Node('+');
-// root.left.right.left.left = new Node(7);
-// root.left.right.left.right = new Node(1);
-// root.right = new Node('-');
-// root.right.left = new Node(17);
-// root.right.right = new Node(5);
-
-// const tree = new BinarySearchTree(null);
-// tree.add(10);
-// tree.add(5);
-// tree.add(2);
-// tree.add(7);
-// tree.add(15);
-// tree.add(12);
-
-
-// console.log(tree.preOrder());
-// console.log(tree.inOrder());
-// console.log(tree.postOrder());
-
 module.exports = {BinarySearchTree, BinaryTree, Node};
