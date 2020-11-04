@@ -13,11 +13,21 @@ class Node {
   }
 
 
+  // we need a queue for the breath
+  class Queue {
+    constructor() { this.top = []; }
+    dequeue() { return this.top.shift(); }
+    enqueue(val) { this.top.push(val); }
+    size() { return this.top.length; }
+  }
+
 //Create a BinaryTree class
 class BinaryTree {
     constructor(root = null) {
     this.root = root === null ? null : new Node(root);
   }
+
+
 
 
   preOrder(){
@@ -135,7 +145,6 @@ class BinaryTree {
     }
 
 
-
 }
 
 
@@ -193,20 +202,24 @@ class BinarySearchTree extends BinaryTree {
       return this._containsForNode(value, parentNode.left);
     }
   }
+
+  breadthFirstTraversal(current) {
+    const q = new Queue();
+    let output = [];
+    // q.enqueue(this.root);
+
+    q.enqueue(current);
+
+    while (q.size() > 0) {
+      const current = q.dequeue();
+      output.push(current.value);
+      if (current.left !== null) { q.enqueue(current.left); }
+      if (current.right !== null) { q.enqueue(current.right); } 
+    }
+    return console.log(output);
+  }
+
 }
 
 
-module.exports = {BinarySearchTree, BinaryTree, Node};
-
-
-// let tree = new BinarySearchTree(null);
-//     tree.add(15);
-//     tree.add(2);
-//     tree.add(3);
-//     tree.add(4);
-//     tree.add(5);
-//     tree.add(6);
-//     tree.add(7);
-//     tree.add(8);
-
-//    console.log( tree.fizzBuzzTree());
+module.exports = {BinarySearchTree, BinaryTree, Node, Queue};
