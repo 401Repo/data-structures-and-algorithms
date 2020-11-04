@@ -1,6 +1,6 @@
 'use strict';
 // eslint-disable-next-line no-unused-vars
-const { BinarySearchTree, BinaryTree, Node, intersectTrees } = require('../tree.js');
+const { BinarySearchTree, BinaryTree, Node, Queue } = require('../tree.js');
 
 
 describe(`Testing the tree`, () => {
@@ -56,8 +56,6 @@ describe(`Testing the tree`, () => {
     tree.add(12);
     expect(tree.postOrder()).toEqual([2, 7, 5, 12, 15, 10]);
   });
-
-
   it('Can find the max val in a binary tree', () => {
     const tree = new BinarySearchTree(null);
     tree.add(10);
@@ -71,4 +69,12 @@ describe(`Testing the tree`, () => {
     expect(tree.getMaxVal()).toEqual(90);
   });
 
+  it('Can return a fizzbuzztree from an input tree', () => {
+    const tree = new BinarySearchTree(null);
+    tree.add(15);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    expect(tree.fizzBuzzTree()).toEqual({"root": {"left": {"left": {"left": null, "right": {"left": null, "right": null, "value": "4"}, "value": "2"}, "right": null, "value": "Fizz"}, "right": null, "value": "FizzBuzz"}});
+  });
 });

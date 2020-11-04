@@ -13,11 +13,21 @@ class Node {
   }
 
 
+  // we need a queue for the breath
+  class Queue {
+    constructor() { this.top = []; }
+    dequeue() { return this.top.shift(); }
+    enqueue(val) { this.top.push(val); }
+    size() { return this.top.length; }
+  }
+
 //Create a BinaryTree class
 class BinaryTree {
     constructor(root = null) {
     this.root = root === null ? null : new Node(root);
   }
+
+
 
 
   preOrder(){
@@ -90,6 +100,51 @@ class BinaryTree {
     return temp;
 
   }
+
+  fizzBuzzTree() {
+
+      // lets add the result in pre order: root, left, right
+      let results = [];
+      let _walk = (node) => {
+        results.push(node.value);
+        if(node.left) {
+          _walk(node.left);
+        }
+        if(node.right) {
+          _walk(node.right);
+        }
+      };
+      _walk(this.root);
+
+
+
+
+      // return results; NOT SO FAST!!!!!!!
+      const fizzBuzzedTree = new BinarySearchTree(null);
+
+
+      for(let x = 0; x < results.length; x++){
+
+        if (results[x] % 15 == 0){
+          fizzBuzzedTree.add("FizzBuzz"); 
+      }
+        else if (results[x] % 3 == 0){
+          fizzBuzzedTree.add("Fizz");
+        } 
+        else if (results[x] % 5 == 0){
+  
+          fizzBuzzedTree.add("Buzz");
+        }
+         else{
+          fizzBuzzedTree.add(results[x].toString());
+         }
+
+      }
+
+      return fizzBuzzedTree;
+    }
+
+
 }
 
 
@@ -147,18 +202,24 @@ class BinarySearchTree extends BinaryTree {
       return this._containsForNode(value, parentNode.left);
     }
   }
+
+  breadthFirstTraversal(current) {
+    const q = new Queue();
+    let output = [];
+    // q.enqueue(this.root);
+
+    q.enqueue(current);
+
+    while (q.size() > 0) {
+      const current = q.dequeue();
+      output.push(current.value);
+      if (current.left !== null) { q.enqueue(current.left); }
+      if (current.right !== null) { q.enqueue(current.right); } 
+    }
+    return console.log(output);
+  }
+
 }
 
 
-module.exports = {BinarySearchTree, BinaryTree, Node};
-const tree = new BinarySearchTree(null);
-tree.add(10);
-tree.add(10);
-tree.add(10);
-tree.add(13);
-tree.add(19);
-tree.add(20);
-tree.add(90);
-tree.add(10);
-
-console.log(tree.getMaxVal())
+module.exports = {BinarySearchTree, BinaryTree, Node, Queue};
