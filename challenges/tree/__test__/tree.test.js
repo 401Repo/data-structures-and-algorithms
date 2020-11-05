@@ -1,6 +1,7 @@
 'use strict';
 // eslint-disable-next-line no-unused-vars
-const { BinarySearchTree, BinaryTree, Node, Queue } = require('../tree.js');
+const { BinarySearchTree, BinaryTree, Node } = require('../tree.js');
+const {TreeNode, Tree, QueueNode, Queue} = require('../onlyBT.js');
 
 
 describe(`Testing the tree`, () => {
@@ -76,5 +77,17 @@ describe(`Testing the tree`, () => {
     tree.add(4);
     tree.add(2);
     expect(tree.fizzBuzzTree()).toEqual({"root": {"left": {"left": {"left": null, "right": {"left": null, "right": null, "value": "4"}, "value": "2"}, "right": null, "value": "Fizz"}, "right": null, "value": "FizzBuzz"}});
+  });
+  it('Breath search is working', () => {
+    const testTree2 = new Tree();
+    testTree2.root = new TreeNode(10);
+    testTree2.root.children.push(new TreeNode(6));
+    testTree2.root.children.push(new TreeNode(15));
+    testTree2.root.children[0].children.push(new TreeNode(3));
+    testTree2.root.children[0].children.push(new TreeNode(8));
+    testTree2.root.children[0].children.push(new TreeNode(7));
+    testTree2.root.children[1].children.push(new TreeNode(20));
+
+    expect(testTree2.traverseDFS('in')).toEqual([3, 6, 8, 7, 10, 15, 20]);
   });
 });
