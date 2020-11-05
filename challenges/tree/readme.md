@@ -14,6 +14,7 @@ I need classes for nodes, tree, and methods for the three
 -    ✓ Can return a collection post order from the tree nodes
 -    ✓ Can find the max val in a binary tree
 -    ✓ Can return a fizzbuzztree from an input tree (1 ms)
+-    ✓ Breath search is working (1 ms)
 
 ## guide:
 

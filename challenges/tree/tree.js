@@ -1,6 +1,9 @@
 'use strict';
 
+
 //i need a nodes class, a tree, and the pre/post and order methods
+
+
 
 
 // Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
@@ -10,15 +13,6 @@ class Node {
       this.left = right;
       this.right = left;
     }
-  }
-
-
-  // we need a queue for the breath
-  class Queue {
-    constructor() { this.top = []; }
-    dequeue() { return this.top.shift(); }
-    enqueue(val) { this.top.push(val); }
-    size() { return this.top.length; }
   }
 
 //Create a BinaryTree class
@@ -203,23 +197,7 @@ class BinarySearchTree extends BinaryTree {
     }
   }
 
-  breadthFirstTraversal(current) {
-    const q = new Queue();
-    let output = [];
-    // q.enqueue(this.root);
-
-    q.enqueue(current);
-
-    while (q.size() > 0) {
-      const current = q.dequeue();
-      output.push(current.value);
-      if (current.left !== null) { q.enqueue(current.left); }
-      if (current.right !== null) { q.enqueue(current.right); } 
-    }
-    return console.log(output);
-  }
-
 }
 
 
-module.exports = {BinarySearchTree, BinaryTree, Node, Queue};
+module.exports = {BinarySearchTree, BinaryTree, Node};
