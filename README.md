@@ -29,6 +29,10 @@
 
 ### [Code Challenge 16: Merge Sort](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/merge-sort)
 
+### [Code Challenge 17: Quick Sort](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/quick-sort)
+
+
+
 
 
 
