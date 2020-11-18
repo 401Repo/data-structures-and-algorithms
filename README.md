@@ -27,5 +27,8 @@
 
 ### [Code Challenge 15: Inser Sort](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/insert-sort)
 
+### [Code Challenge 16: Merge Sort](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/merge-sort)
+
+
 
 
