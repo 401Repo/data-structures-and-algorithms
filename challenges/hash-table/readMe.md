@@ -1,4 +1,4 @@
-# Linked Hash Table
+# Hash Table
 
 Implement hast tables Data Structure and then make sure to test and save the test on the folder from the code challlenged page:
 
