@@ -31,7 +31,9 @@
 
 ### [Code Challenge 17: Quick Sort](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/quick-sort)
 
-### [Code Challenge 17: first word](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/first-word)
+### [Code Challenge 18: first word](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/first-word)
+
+### [Code Challenge 19: Graph](https://github.com/401Repo/data-structures-and-algorithms/tree/main/challenges/graphs)
 
 
 
