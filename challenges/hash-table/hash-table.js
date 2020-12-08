@@ -1,79 +1,112 @@
-'use strict;'
-
-// had help from: https://www.educative.io/blog/data-strucutres-hash-table-javascript
+'use strict';
 
 class HashTable {
-    constructor() {
-        this.values = {};
-        this.length = 0;
-        this.size = 0;
-    }
 
-    hash(key) {
-        
-        return key.toString().length % this.size;
-        
-    }
+  constructor(size) {
+    this.size = size;
+    this.buckets = new Array(size);
+    this.keysArr = []; // adds keys to an array. used for leftJoin
+    this.keysObj = {};
+  }
 
-    add(key, value) {
-        this.length++;
-        this.size++;
-        const hash = this.hash(key);
-        if (!this.values.hasOwnProperty(hash)) {
-            this.values[hash] = {}
-       
-        }
-        if (!this.values[hash].hasOwnProperty(key)) {
-            
-        }
-        this.values[hash][key] = value;
-    }
+  hash(key) {
+    let charArray = key.split('');
+    // return to me the ascii code value at the index of string
+    let hashSum = charArray.reduce((total, char) => {
+      return total + char.charCodeAt(0);
+    }, 0) * 599;
+    let HashIndex = hashSum % this.size;
+    return HashIndex;
+  }
 
-    get(key) {
-        const hash = this.hash(key);
-        if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
-            return this.values[hash][key];
-        } else {
-            return null;
-        }
-    }
+  add(key, value) {
+    this.keysArr.push(key)
+    this.keysObj[key] = value; // used for leftJoin
 
-    contains(key) {
-        let exist = false;
-        const hash = this.hash(key);
-        if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
-            return true;
-        } else {
-            return false;
-        }
+    let hash = this.hash(key);
+    if (!this.buckets[hash]) {
+      this.buckets[hash] = new LinkedList();
     }
+    // this is important based on the languages capabilities. This, right here, is something only JS can do. Other languages can achieve a similar task, but it'll be a different process
+    let entry = { [key]: value };
+    //dynamically add it to our Linked List
+    this.buckets[hash].add(entry);
+  }
 
+  get(key) {
+    let bucket = this.buckets[this.hash(key)];
+    if (!bucket) {
+      return null;
+    }
+    let value = bucket.find(key);
+    return value;
+  }
+
+  contains(key) {
+    let bucket = this.buckets[this.hash(key)];
+    if (!bucket) {
+      return false;
+    }
+    let value = bucket.find(key);
+    if (value) {
+      return true;
+    }
+  }
+}
+// return Boolean(this.buckets[this.hash(key)]);
+
+/*
+  Node and Linked List classes for use within hash structures
+*/
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
 
+  add(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      return;
+    }
 
-//create object of type hash table
-const ht = new HashTable();
-//add data to the hash table ht
-// ht.add("Canada", "300");
-// ht.add("Germany", "100");
-// ht.add("Italy", "50");
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = node;
+  }
 
-// //get
-// console.log(ht.get("Italy"));
+  values() {
+    let values = [];
+    let current = this.head;
+    while (current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    return values;
+  }
 
-// //contains
-// console.log(ht.contains("US"));
+  find(key) {
+    let value = undefined;
+    let current = this.head;
+    let objKey = Object.keys(current.value)[0];
 
-// console.log(ht);
-
-// console.log(ht.hash("Italy"));
-// console.log(ht.hash("Canada"));
-// console.log(ht.hash("Germany"));
-// console.log(ht.hash("US"));
+    while (current) {
+      if (key === objKey) {
+        value = Object.values(current.value).toString();
+      }
+      current = current.next;
+    }
+    return value;
+  }
+}
 
 module.exports = HashTable;
-
-
-
-

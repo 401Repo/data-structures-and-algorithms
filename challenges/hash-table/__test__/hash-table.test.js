@@ -1,97 +1,35 @@
 'use strict';
 
-let HashTable = require('../hash-table');
+const HashTable = require('../hash-table');
 
-
-// //contains
-// console.log(ht.contains("US"));
-
-// console.log(ht);
-
-// console.log(ht.hash("Italy"));
-// console.log(ht.hash("Canada"));
-// console.log(ht.hash("Germany"));
-// console.log(ht.hash("US"));
-
-describe('Testing Hash table', () => {
-  it( 'It should create a hash table with length 1 and Value of "300" for key "Canada"',() => {
-
-    //create a ht
-    let ht = new HashTable();
-
-    ht.add("Canada", "300");
-    expect(ht.size).toEqual(1);
-    expect(ht.length).toEqual(1);
-    expect(ht.get("Canada")).toEqual("300");
+describe('Testing the HashTable class', () => {
+  it('Should add a key/value object to the hashtable results', () => {
+    let map = new HashTable();
+    map.add('ashley', 'student');
+    expect(map.contains('ashley')).toBe(true);
   });
-
-  it( 'We can use "contains" and return a boolean depending if its in the HT',() => {
-  
-    //create a ht
-    let ht = new HashTable();
-
-    ht.add("Canada", "300");
-
-    ht.add("Mexico", "900");
-
-    expect(ht.size).toEqual(2);
-    expect(ht.length).toEqual(2);
-    expect(ht.contains("Canada")).toEqual(true);
+  it('Should retrieve a value based on key', () => {
+    let map = new HashTable();
+    expect(map.add('ashley', 'student'));
+    expect(map.contains('ashley')).toBe(true);
   });
-
-  it( 'We can use "contains" and return false if it not in the HT',() => {
-  
-    //create a ht
-    let ht = new HashTable();
-
-    ht.add("Canada", "300");
-
-    ht.add("Mexico", "900");
-
-    expect(ht.size).toEqual(2);
-    expect(ht.length).toEqual(2);
-    expect(ht.contains("Water-mala")).toEqual(false);
+  it('Should return null for a key that does not exist in the hashtable', () => {
+    let map = new HashTable();
+    expect(map.get('ashley')).toBe(null);
   });
-
-  it( 'Use out has helped method to see the index of an arbitrary key of our ht',() => {
-  
-    //create a ht
-    let ht = new HashTable();
-
-    ht.add("Canada", "300");
-
-    ht.add("Mexico", "900");
-
-    expect(ht.size).toEqual(2);
-    expect(ht.length).toEqual(2);
-    expect(ht.hash("Canada")).toEqual(0);
+  it('Should handle a collision within the hashtable', () => {
+    //TODO:
+    let map = new HashTable();
+    // expect(map.add('ashley', 'student'));
+    // expect(map.add('ashley', 'student'));
+    // expect();
   });
+  it('Should retrieve a value from a bucket within the hashtable that has a collision', () => {
+    let map = new HashTable();
+    //TODO:
+    expect(map.add('ashley', 'student'));
+    expect(map.add('ashley', 'student'));
 
-
-    it( 'We can "get" values back by entering a key',() => {
-  
-      //create a ht
-      let ht = new HashTable();
-  
-      ht.add("Canada", "300");
-
-      ht.add("Mexico", "900");
-
-      expect(ht.size).toEqual(2);
-      expect(ht.length).toEqual(2);
-      expect(ht.get("Canada")).toEqual("300");
-      expect(ht.get("Mexico")).toEqual("900");
-    });
-
-  it( 'It should create a hash table with length 0 and size 0',() => {
-
-    //create a ht
-    let ht = new HashTable();
-
-    expect(ht.size).toEqual(0);
-    expect(ht.length).toEqual(0);
-
+    expect(map.contains('ashley')).toBe(true);
   });
-
-
 });

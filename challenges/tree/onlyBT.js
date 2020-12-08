@@ -191,3 +191,15 @@ What did i learn form this tutorial? I had no idea you can actually use a switch
 */
 
   module.exports = {TreeNode, Tree, QueueNode, Queue};
+
+
+  const testTree2 = new Tree();
+  testTree2.root = new TreeNode(10);
+  testTree2.root.children.push(new TreeNode(6));
+  testTree2.root.children.push(new TreeNode(15));
+  testTree2.root.children[0].children.push(new TreeNode(3));
+  testTree2.root.children[0].children.push(new TreeNode(8));
+  testTree2.root.children[0].children.push(new TreeNode(7));
+  testTree2.root.children[1].children.push(new TreeNode(20));
+
+  console.log(testTree2.traverseDFS(this.root));
