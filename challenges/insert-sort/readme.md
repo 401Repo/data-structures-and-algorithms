@@ -1,4 +1,4 @@
-# Inser Sort:
+# Insert Sort:
 
 I used the help of [this site](https://medium.com/javascript-algorithms/javascript-algorithms-insertion-sort-59b6b655373c) to see what the code looks like in js instead of the example on our instructions.
 

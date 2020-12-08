@@ -1,136 +1,132 @@
 'use strict';
 
-/*
-
-Hi Adrian, i got help from here: https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
-
-*/
-
-// I need a queue for the bft
 
 class Queue {
     constructor() {
-        this.items = [];
+        this.front = null;
+        this.storage = [];
     }
+  
 
-
-    enqueue(element) {
-
-        this.items.push(element);
+    enqueue(value) {
+        if (this.front === null) {this.front = value}
+        return this.storage.push(value)
     }
+  
 
     dequeue() {
-
-        if (this.isEmpty())
-            return "Underflow";
-        return this.items.shift();
+        if (this.front === null) {
+            return null;
+        } else {
+            if (this.storage[1] === undefined) {
+                this.front = null;
+            } else {
+                this.front = this.storage[1];
+            }
+            return this.storage.shift();
+        }
     }
-
-    front() { 
-    // returns the Front element of  
-    // the queue without removing it. 
-    if(this.isEmpty()) 
-        return "No elements in Queue"; 
-    return this.items[0]; 
-}
+  
+    peek() {
+        return this.front;
+    }
 
     isEmpty() {
-
-        return this.items.length == 0;
+        return this.storage.length ? false : true;
     }
-    printQueue() {
-        var str = "";
-        for (var i = 0; i < this.items.length; i++)
-            str += this.items[i] + " ";
-        return str;
+  }
+  
+  class Node{
+    constructor(value) {
+      this.value = value;
     }
-}
+  }
+  
+  class Edge{
+    constructor(node, weight = 1){
+      this.node = node;
 
+      // weight is for cash needed for the flights
+      this.weight = weight;
 
-class Graph {
+      //this.cash = cash;
+    }
+  }
+  
+  class Graph{
+    constructor(){
+      this.adjacencyList = new Map();
+    }
+  
     
-    constructor(noOfVertices) {
-        this.noOfVertices = noOfVertices;
-        this.AdjList = new Map();
+    addNode(node){
+      if (!this.adjacencyList.has(node)) {
+        return this.adjacencyList.set(node, []);
+      }
     }
-
- 
-
-    addVertex(v) {
-       
-        this.AdjList.set(v, []);
+  
+    addEdge(node1, node2, weight = 1){
+      if (!this.adjacencyList.has(node1)) this.adjacencyList.set(node1, []);
+      if (!this.adjacencyList.has(node2)) this.adjacencyList.set(node2, []);
+  
+      const neighborsOfNode1 = this.adjacencyList.get(node1);
+      const neighborsOfNode2 = this.adjacencyList.get(node2);
+  
+      neighborsOfNode1.push(new Edge(node2,weight));
+      neighborsOfNode2.push(new Edge(node1,weight));
     }
-    addEdge(v, w) {
-        
-        this.AdjList.get(v).push(w);
-
-        
-        this.AdjList.get(w).push(v);
+  
+    getNodes(){
+      return [... this.adjacencyList.keys()];
     }
-    printGraph() {
-       
-        var get_keys = this.AdjList.keys();
+  
+    getNeighbors(node) {
+      if (!this.adjacencyList.has(node)){
+        return 'Sorry; this is not on the graph'
+      }
+      return this.adjacencyList.get(node)
+    }
+  
+    getEdge(node1,node2) {
+      let result = false
+      const neighbors = this.getNeighbors(node1)
+      neighbors.forEach( neighbor => {
+        if (neighbor.node.value === node2.value) result = neighbor.weight
+      })
+  
+      return result
+    }
+  
+    size(){
+      return this.adjacencyList.size;
+    }
+  
 
+    breadthFirst(node) {
+      let nodes = new Set() 
+      let breadth = new Queue
+      breadth.enqueue(node)
+      nodes.add(node)
       
-        for (var i of get_keys) {
-            
-            var get_values = this.AdjList.get(i);
-            var conc = "";
-
-            
-            for (var j of get_values)
-                conc += j + " ";
-
-           
-            i + " -> " + conc;
-        }
+      while (!breadth.isEmpty()) {
+        let front = breadth.dequeue()
+        let list = this.getNeighbors(front)
+        list.forEach(child => {
+          if(!nodes.has(child.node)) {
+            nodes.add(child.node)
+            breadth.enqueue(child.node)
+          }
+        })
+      }
+      return [... nodes.keys()].map(node => node.value)
     }
-
-    bfs(startingNode) {
-
-        var visited = {};
-        var visitedVertex = [];
-
-        // console.log("in BFS");
-
-        var q = new Queue();
-
-        visited[startingNode] = true;
-        q.enqueue(startingNode);
-        // console.log(q, "q at start");
-
-        // loop until queue is element
-        while (!q.isEmpty()) {
-            // get the element from the queue
-            var getQueueElement = q.dequeue();
-            
-
-            // passing the current vertex to callback funtion
-            // console.log(getQueueElement);
-            visitedVertex.push(getQueueElement);
-            // console.log(q, "q so far");
-
-            // get the adjacent list for current vertex
-            var get_List = this.AdjList.get(getQueueElement);
-
-            // loop through the list and add the element to the
-            // queue if it is not processed yet
-            for (var i in get_List) {
-                var neigh = get_List[i];
-
-                if (!visited[neigh]) {
-                    visited[neigh] = true;
-                    q.enqueue(neigh);
-                }
-            }
-        }
-        return visitedVertex;
-    }
-    // dfs(v)
-}
-
-
-
-
-module.exports = Graph;
+  
+  }
+  
+  module.exports = {
+    Queue,
+    Node,
+    Edge,
+    Graph
+  }
 

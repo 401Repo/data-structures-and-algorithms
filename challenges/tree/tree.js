@@ -3,9 +3,6 @@
 
 //i need a nodes class, a tree, and the pre/post and order methods
 
-
-
-
 // Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 class Node {
     constructor(value, left = null, right = null) {

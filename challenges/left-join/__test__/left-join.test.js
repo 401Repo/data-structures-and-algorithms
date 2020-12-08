@@ -16,8 +16,6 @@ describe('Testing left join', () => {
         table2.add('medium', 'paper');
         table2.add('pet', 'cat');
 
-        console.log(leftJoin(table1, table2));
-
         expect(leftJoin(table1, table2)).toEqual([["condiment", "sugar", "salt"], ["utensil", "fork", null], ["pet", "dog", "cat"]]);
     });
 
